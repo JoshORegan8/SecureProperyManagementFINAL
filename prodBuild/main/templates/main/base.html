@@ -1,0 +1,127 @@
+{% load static %} 
+<!doctype html>
+<html>
+  <head>
+  
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style type="text/css">
+        * {
+          font-family: 'Montserrat', sans-serif;
+        }
+      
+
+              a.btn {
+          margin: 0 1em;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .nav-container {
+            background: rgba(0,0,0,0.8);
+          height: 100%;
+        }
+
+        .header {
+          margin-top: -.9%;
+        }
+
+        nav ul li { 
+          float: left;
+          list-style: none;
+          font-size: 130%;
+          padding-left: 9%;
+          padding-top: 1.5%;
+        }
+
+        nav ul li a { 
+          color: white; 
+          margin: 5px; 
+          padding: 18px; 
+          display: block; 
+          margin-top: 0%;
+          font-family: 'Montserrat', sans-serif;
+        }
+
+        nav ul li a:hover { 
+        color: #000000; transition: color 0.7s ease-in; 
+        }
+
+        .header {
+          background-color: #000033;
+          width: 100%;
+          top: 0;
+          border: 1px;
+          border-radius: 2px;
+          box-shadow: 0 0 10px 0px rgba(12, 3, 25, 0.8);
+        }
+
+        .logo {
+          float: left;
+          padding: 10px 0;
+          padding-left: 1%
+        }
+
+        @media screen and (max-width: 600px) {
+        .header a:not(:first-child) {display: none;}
+        .header a.logo {
+            float: right;
+            display: block;
+          }
+        }
+
+        @media screen and (max-width: 478px) {
+        .header
+          
+          1651
+        }
+
+        .content{
+          padding-top: 10%
+        }
+    </style>
+
+    <title>Secure Propery Management</title>
+  </head>
+  <body>
+      <header>
+      <div class="nav-container">
+        <nav class="header">
+          <div class="logo">
+          <a href="index.html" class="pull-left"><img src="{% static '/images/Logo.png'%}" alt="LOGO" style="width:188px;height:100px;" ></a>
+          </div>
+          <ul>
+          <li><a href="/view">Home</a></li>
+          <li><a href="/create">Create a Portfolio</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/register">Register</a></li>
+          <li><a href="/logout">Logout</a></li>
+          </ul>
+          <div class="clear"></div>
+        </nav>
+      </div>
+    </header>
+
+    <div id="content" , name="content", class="main">
+      <div class="row justify-content-center">
+          <div class="col-8">
+              <hr class="mt-0 mb-4">
+            {% block content %}
+            {% endblock %}
+          </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

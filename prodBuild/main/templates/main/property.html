@@ -1,0 +1,38 @@
+{% extends 'main/base.html' %}
+{% load static %} 
+
+{%block title%}
+Property
+{%endblock%}
+
+
+{%block content%}
+    <table class="table">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Property</th>
+              <th scope="col">File</th>
+              <th scope="col"><a href="/files/upload/">Upload</a></th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for ls in ls %}
+            <tr>
+              <th scope="row">{{ ls.id }}</th>
+              <td>{{ ls.Property }}</td>
+              <td>{{ ls.name }}</td>
+              <td><a href="{{ ls.pdf.url }}" target="_blank">Download</a></td>
+              <form method="post" action="{% url 'file_delete' ls.pk %}">
+              {%csrf_token%}
+                <td><button type="submit" class="btn btn-danger btn-sm">Delete</button></td>
+            </tr>
+             {% endfor %}
+          </tbody>
+        </table>
+        
+
+
+{%endblock%}

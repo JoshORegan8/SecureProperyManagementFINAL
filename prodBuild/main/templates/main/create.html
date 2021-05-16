@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% if user.is_authenticated %}
+
+{% block title %} Create Portfolio {% endblock %}
+
+{% block content %}
+<form method="post" action="/create/">
+    {% csrf_token %}
+    <div class="input-group mb-3">
+                <div class ="input-group-prepend">
+                    <button type ="submit", name="save" class="btn btn-success">Create New</button>
+                </div>
+            {{form.name}}
+        </div>
+    </div>
+</form>
+{% endblock %}
+{% else %}
+<a href="/login">Login Here</a>
+{% endif %}

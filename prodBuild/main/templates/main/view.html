@@ -1,0 +1,36 @@
+{%extends "main/base.html"%}
+{% load static %} 
+{% block title %}
+View
+{% endblock %}
+
+{% block content %}
+    <style type="text/css">
+
+
+    .card{
+    border: none;
+    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+    overflow:hidden;
+    border: 1px solid #000033;
+    border-radius:5px;
+    margin-bottom: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+    </style>
+<div class="container mx-auto mt-4">
+  <div class="row">
+  {% for pf in user.portfolio.all %}
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem;">
+    <img src="{% static '/images/Property2.png'%}" class="card-img-top" alt="Picture of {{pf.name}}">
+    <div class="card-body">
+    <h5 class="card-title">{{pf.name}} Portfolio</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{property.city}}</h6>
+    <a href="/{{pf.id}}"class="btn btn-dark">View Properties</a>
+  </div>
+  </div>
+</div>
+    {% endfor %}
+
+{% endblock %}
